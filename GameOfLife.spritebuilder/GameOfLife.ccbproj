@@ -87,6 +87,27 @@
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
+		<key>GameOfLifeAssets/Assets</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>GameOfLifeAssets/BackgroundImage</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>GameOfLifeAssets/Buttons</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>
