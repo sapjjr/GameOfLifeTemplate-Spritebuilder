@@ -63,6 +63,7 @@ static const int GRID_COLUMNS = 10;
         }
         
         y += _cellHeight;
+        NSLog(@" row  %f column %f ", _cellWidth,  _cellHeight);
     }
 }
 
