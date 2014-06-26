@@ -9,6 +9,7 @@
 #import "Creature.h"
 
 @implementation Creature
+
 - (instancetype)initCreature {
     // since we made Creature inherit from CCSprite, 'super' below refers to CCSprite
     self = [super initWithImageNamed:@"GameOfLifeAssets/Assets/bubble.png"];
