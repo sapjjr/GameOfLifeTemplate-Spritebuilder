@@ -154,25 +154,25 @@ static const int GRID_COLUMNS = 10;
     -(void)UpdateCreatures {
         
         int numAlive = 0; //set count of population to zero
-        float x = 0;
-        float y = 0;
+        //float x = 0;
+        //float y = 0;
         for (int i = 0; i < GRID_ROWS; i++) {
             // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
             _gridArray[i] = [NSMutableArray array];
-            x = 0;
+          //x = 0;
             
             for (int j = 0; j < GRID_COLUMNS; j++) {
+                NSLog(@"row %i and Column %i", i,j);
                 
-                if (currentCreatures.livingNeighbors == 3) {
-                    currentCreatures.isAlive = 0;
                 }
                 
                 
                 
                 numAlive ++;
-                NSLog(@" row  %i column  %i ", i,j);
+                //NSLog(@" row  %i column  %i ", i,j);
             }
         }
-}
+        //_totalAlive = numAlive;
+
 
 @end
