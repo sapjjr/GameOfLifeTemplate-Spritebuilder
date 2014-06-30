@@ -170,13 +170,13 @@ static const int GRID_COLUMNS = 10;
             Creature *creature = _gridArray[row][col];
             NSLog(@"row %i and Column %i", row,col);
             NSLog(@"currentCreature State %hhd", creature.isAlive);
-
+        }
 //            if((creature.livingNeighbors <=1  || (creature.livingNeighbors >= 4) ) {
   //              creature.isAlive = false    }
        // _totalAlive = numAlive;
-       // NSLog(@"number alive %i", numAlive);
+       NSLog(@"number alive %i", numAlive);
 }
-
+}
     
 
 @end
