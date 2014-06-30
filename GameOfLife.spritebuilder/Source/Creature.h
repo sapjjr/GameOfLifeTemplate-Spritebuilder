@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSInteger livingNeighbors;
 
 - (id)initCreature; //method declaration for evolveStep
--(void)updateCreatures;
+
 
 
 
