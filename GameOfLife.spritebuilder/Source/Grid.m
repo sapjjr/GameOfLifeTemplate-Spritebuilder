@@ -175,7 +175,7 @@ static const int GRID_COLUMNS = 10;
     
             } else {
                if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
-                   creature.isAlive = false;
+                   creature.isAlive = false; numAlive = numAlive - 1 ;
                    NSLog(@"  is dead %hhd", creature.isAlive);
                     }
                     }
