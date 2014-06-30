@@ -60,11 +60,12 @@ static const int GRID_COLUMNS = 10;
             //creature.isAlive = YES;
             
             x+=_cellWidth;
+            NSLog(@" row  %f ", _gridArray[i][j]);
         }
         
         y += _cellHeight;
-        NSLog(@" row  %f ", x);
-        NSLog(@" column  %f "      ,  y);
+        
+        NSLog(@" column  %f " , _gridArray[i]);
     }
 }
 
