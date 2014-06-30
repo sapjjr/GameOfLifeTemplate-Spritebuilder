@@ -166,11 +166,10 @@ static const int GRID_COLUMNS = 10;
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
            
             NSLog(@"row/col (%i, %i)  is alive %hhd", row,col,_creature.isAlive);
-            //Creature *creature = _gridArray[row][col];
-            NSLog(@"_creature.livingNeighbors %i", _creature.livingNeighbors);
+            NSLog(@"_creature.livingNeighbors %i ", _creature.livingNeighbors );
             
             //if (col == 3) {
-            //    _creature.isAlive = YES; numAlive ++;
+                _creature.isAlive = YES; numAlive ++;
             //} else {
             //    if ([_gridArray count] <= 1 || [_gridArray count] >= 4) {
             //        _creature.isAlive = NO;
