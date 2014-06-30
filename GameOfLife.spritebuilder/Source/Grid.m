@@ -184,9 +184,11 @@ static const int GRID_COLUMNS = 10;
             }
 
 _totalAlive = numAlive;
-NSLog(@"Final number alive %i------------", numAlive);
+NSLog(@"Row number alive %i------------", numAlive);
 }
+NSLog(@"----------Final number alive %i------------", numAlive);
 }
+
 
 
 @end
