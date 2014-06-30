@@ -16,6 +16,6 @@
 // stores the amount of living neighbors
 @property (nonatomic, assign) NSInteger livingNeighbors;
 
-- (id)initCreature;
+- (id)initCreature; //method declaration for evolveStep
 
 @end
