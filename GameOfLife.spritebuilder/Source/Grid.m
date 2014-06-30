@@ -166,23 +166,19 @@ static const int GRID_COLUMNS = 10;
         _gridArray[row] = [NSMutableArray array];
         //x = 0;
         
-        for (int col = 0; col < GRID_COLUMNS; col++) {
+        for (int col = 0; col < GRID_COLUMNS; col++ ) {
             NSLog(@"row %i and Column %i", row,col);
-                  
-                  
-                  
-                  
-                  }
-                  
-                  
-                  
-                  numAlive ++;
-                  //NSLog(@" row  %i column  %i ", i,j);
-                  }
-                  
-                  _totalAlive = numAlive;
-                  NSLog(@"number alive %i", numAlive);
-                  }
+            NSLog(@"currentCreature %i", currentCreature);
+//            if((currentCreature.countNeighbors <=1  || (currentCreature.countNeighbors >= 4) ) {
+  //              currentCreature.countNeighbors.isAlive = false;
+            //}
+        }
+        numAlive ++;
+        //NSLog(@" row  %i column  %i ", i,j);
+    }
+        _totalAlive = numAlive;
+        NSLog(@"number alive %i", numAlive);
+}
 
     
 
