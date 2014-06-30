@@ -81,10 +81,7 @@
 			<true/>
 		</dict>
 		<key>GameOfLifeAssets</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>GameOfLifeAssets/Assets</key>
 		<dict/>
 		<key>GameOfLifeAssets/BackgroundImage</key>
