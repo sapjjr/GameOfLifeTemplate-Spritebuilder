@@ -106,43 +106,47 @@ static const int GRID_COLUMNS = 10;
     
 }
 
--(void)countNeighbors {
-    //iterate through the rows
-    //note that the NSArray has a method 'count'that will return the number of elements in the Array
-    for (int i = 0; i < [_gridArray[i] count]; i++)//rows
+-(void) countNeighbors {
+// iterate through the rows
+// note that NSArray has a method 'count' that will return the number of elements in the array
+for (int i = 0; i < [_gridArray count]; i++)
+{
+    // iterate through all the columns for a given row
+    for (int j = 0; j < [_gridArray[i] count]; j++)
     {
-
-    for (int j = 0; j < [_gridArray[i] count]; j++) //columns
-    {
-        //access the creature in the cell that corresponds to the current row / column
+        // access the creature in the cell that corresponds to the current row/column
         Creature *currentCreature = _gridArray[i][j];
         
-        //every creature has a living neighbour's property that was created earlier
+        // remember that every creature has a 'livingNeighbors' property that we created earlier
         currentCreature.livingNeighbors = 0;
         
-        //now examine every cell arround the current one
-        //go through the row on top of the current cell, the row the cell is in and the row past the current cell
-        for (int x = (i-1); x <= (x+1); x++) {
-            //go through the column to the left of the current cell the column cell is in and the column to the right of the current cell
-            for (int y = (j-1); y <= (j+1); y++) {
-                //check that the cell we are checking isn't off the screen
+        // now examine every cell around the current one
+        
+        // go through the row on top of the current cell, the row the cell is in, and the row past the current cell
+        for (int x = (i-1); x <= (i+1); x++)
+        {
+            // go through the column to the left of the current cell, the column the cell is in, and the column to the right of the current cell
+            for (int y = (j-1); y <= (j+1); y++)
+            {
+                // check that the cell we're checking isn't off the screen
                 BOOL isIndexValid;
                 isIndexValid = [self isIndexValidForX:x andY:y];
-                // skip over all the cells that are off screen and the cell that contains the creature we are curently updating
-                if (!((x == i ) && (y == j )) && isIndexValid ) {
+                
+                // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
+                if (!((x == i) && (y == j)) && isIndexValid)
+                {
                     Creature *neighbor = _gridArray[x][y];
-                    if (neighbor.isAlive) {
-                        currentCreature.livingNeighbors +=1;
+                    if (neighbor.isAlive)
+                    {
+                        currentCreature.livingNeighbors += 1;
                     }
                 }
             }
         }
     }
-        
-}
 }
 
-- (BOOL)isIndexValidForX:(int)x andY:(int)y {
+-(BOOL)isIndexValidForX:(int)x andY:(int)y {
     BOOL isIndexValid = YES;
     if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS) {
         isIndexValid = NO;
@@ -151,18 +155,21 @@ static const int GRID_COLUMNS = 10;
 }
 
     
--(void)UpdateCreatures {
+-(void)updateCreatures {
         
         int numAlive = 0; //set count of population to zero
-        //float x = 0;
-        //float y = 0;
-        for (int i = 0; i < GRID_ROWS; i++) {
+        for (int row = 0; row < GRID_ROWS; row++) {
             // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
             _gridArray[i] = [NSMutableArray array];
           //x = 0;
             
-            for (int j = 0; j < GRID_COLUMNS; j++) {
-                NSLog(@"row %i and Column %i", i,j);
+            for (int col = 0; col < GRID_COLUMNS; col++) {
+                NSLog(@"row %i and Column %i", row,col);
+                
+                
+                
+                
+                
                 
                 }
                 
@@ -173,7 +180,7 @@ static const int GRID_COLUMNS = 10;
             }
     
         _totalAlive = numAlive;
-    NSLog(@"number alive %i", numAlive)
+    NSLog(@"number alive %i", numAlive);
 }
 
 @end
