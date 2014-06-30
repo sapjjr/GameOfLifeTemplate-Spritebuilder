@@ -177,8 +177,8 @@ static const int GRID_COLUMNS = 10;
         numAlive ++;
         //NSLog(@" row  %i column  %i ", i,j);
     }
-        _totalAlive = numAlive;
-        NSLog(@"number alive %i", numAlive);
+       // _totalAlive = numAlive;
+       // NSLog(@"number alive %i", numAlive);
 }
 
     
