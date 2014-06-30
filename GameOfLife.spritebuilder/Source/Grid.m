@@ -175,7 +175,7 @@ static const int GRID_COLUMNS = 10;
                    _creature.isAlive = NO;
         }
             }
-        }}
+        }
         
 //            if((creature.livingNeighbors <=1  || (creature.livingNeighbors >= 4) ) {
   //              creature.isAlive = false    }
