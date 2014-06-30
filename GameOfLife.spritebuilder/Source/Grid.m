@@ -164,7 +164,7 @@ static const int GRID_COLUMNS = 10;
     
     for (int row = 0; row < GRID_ROWS; row++) {
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
-           Creature *creature = self[row][column] ;
+           Creature *creature  ;
             NSLog(@"row/col (%i, %i)  is alive %hhd and neighbors %i", row,col, creature.isAlive, creature.livingNeighbors);
             //NSLog(@"_creature.livingNeighbors %i ", creature.livingNeighbors );
            
