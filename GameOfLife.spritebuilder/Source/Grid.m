@@ -168,6 +168,12 @@ static const int GRID_COLUMNS = 10;
             NSLog(@"row %i and Column %i", row,col);
             //Creature *creature = _gridArray[row][col];
             NSLog(@"currentCreature State %ld", (long)_creature.livingNeighbors);
+            
+            if (col == 3) {
+                _creature.isAlive = YES; numAlive ++;
+            } else {
+                if ([_gridArray count] <= 1 || [_gridArray count] >= 4) {
+                    _creature.isAlive = NO;
         }
     
         
