@@ -17,14 +17,13 @@ static const int GRID_COLUMNS = 10;
     NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
+
 }
 
 - (void)onEnter
 {
     [super onEnter];
-    
     [self setupGrid];
-    
     // accept touches on the grid
     self.userInteractionEnabled = YES;
 }
@@ -135,6 +134,7 @@ static const int GRID_COLUMNS = 10;
                 // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
                 if (!((x == i) && (y == j)) && isIndexValid)
                 {
+                    
                     Creature *neighbor = _gridArray[x][y];
                     if (neighbor.isAlive)
                     {
@@ -161,24 +161,24 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures {
     
     int numAlive = 0; //set count of population to zero
+    Creature *_creature;
     for (int row = 0; row < GRID_ROWS; row++) {
-        // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
-        _gridArray[row] = [NSMutableArray array];
-        row = 0;
-        
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
            
             NSLog(@"row %i and Column %i", row,col);
-            Creature *creature = _gridArray[row][col];
-            //NSLog(@"currentCreature State %hhd", creature.isAlive);
+            //Creature *creature = _gridArray[row][col];
+            NSLog(@"currentCreature State %ld", (long)_creature.livingNeighbors);
         }
     
+        
 //            if((creature.livingNeighbors <=1  || (creature.livingNeighbors >= 4) ) {
   //              creature.isAlive = false    }
-        _totalAlive = numAlive;
-       NSLog(@"number alive %i", numAlive);
+       
 }
+
+_totalAlive = numAlive;
+NSLog(@"number alive %i", numAlive);
 }
-    
+
 
 @end
