@@ -174,7 +174,7 @@ static const int GRID_COLUMNS = 10;
                if (_creature.livingNeighbors <= 1 || _creature.livingNeighbors >= 4) {
                    _creature.isAlive = NO;
         }
-    
+            }
         
 //            if((creature.livingNeighbors <=1  || (creature.livingNeighbors >= 4) ) {
   //              creature.isAlive = false    }
