@@ -161,20 +161,20 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures {
     
     int numAlive = 0; //set count of population to zero
-    Creature *_creature;
+    Creature *creature = [[Creature alloc] init];
     for (int row = 0; row < GRID_ROWS; row++) {
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
            
-            NSLog(@"row/col (%i, %i)  is alive %hhd", row,col, _creature.isAlive);
-            NSLog(@"_creature.livingNeighbors %i ", _creature.livingNeighbors );
+            NSLog(@"row/col (%i, %i)  is alive %hhd", row,col, creature.isAlive);
+            NSLog(@"_creature.livingNeighbors %i ", creature.livingNeighbors );
            
-            if (_creature.livingNeighbors == 0) {
-                _creature.isAlive = true; numAlive ++;
-                NSLog(@"  is alive %hhd", _creature.isAlive);
+            if (creature.livingNeighbors == 0) {
+                creature.isAlive = true; numAlive ++;
+                NSLog(@"  is alive %hhd", creature.isAlive);
     
             } else {
                //if (_creature.livingNeighbors <= 1 || _creature.livingNeighbors >= 4) {
-                   _creature.isAlive = false;
+                   creature.isAlive = false;
                  //   }
                     }
             }
