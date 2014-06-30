@@ -158,30 +158,5 @@ for (int i = 0; i < [_gridArray count]; i++)
     }
 
     
--(void)updateCreatures {
-        
-        int numAlive = 0; //set count of population to zero
-        for (int row = 0; row < GRID_ROWS; row++) {
-            // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
-            _gridArray[row] = [NSMutableArray array];
-          //x = 0;
-            
-            for (int col = 0; col < GRID_COLUMNS; col++) {
-                NSLog(@"row %i and Column %i", row,col;
-                
-                
-                
-                
-                }
-                
-                
-                
-                numAlive ++;
-                //NSLog(@" row  %i column  %i ", i,j);
-            }
-    
-        _totalAlive = numAlive;
-    NSLog(@"number alive %i", numAlive);
-}
 
 @end
