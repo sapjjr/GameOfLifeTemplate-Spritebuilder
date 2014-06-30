@@ -63,8 +63,8 @@ static const int GRID_COLUMNS = 10;
         }
         
         y += _cellHeight;
-        NSLog(@" row  %f column  ", _cellWidth);
-        NSLog(@" row  %f "      ,  _cellHeight);
+        NSLog(@" row  %f column  ", x);
+        NSLog(@" row  %f "      ,  y);
     }
 }
 
@@ -110,9 +110,11 @@ static const int GRID_COLUMNS = 10;
 -(void)countNeighbors {
     //iterate through the rows
     //note that the NSArray has a method 'count'that will return the number of elements in the Array
-    for (int i = 0; i < [_gridArray[i] count]; i++) {
+    for (int i = 0; i < [_gridArray[i] count]; i++)//rows
+    {
 
-    for (int j = 0; j < [_gridArray[i] count]; j++) {
+    for (int j = 0; j < [_gridArray[i] count]; j++) //columns
+    {
         //access the creature in the cell that corresponds to the current row / column
         Creature *currentCreature = _gridArray[i][j];
         
@@ -151,7 +153,24 @@ static const int GRID_COLUMNS = 10;
 
     
     -(void)UpdateCreatures {
-    
+        
+        int numAlive = 0; //set count of population to zero
+        float x = 0;
+        float y = 0;
+        for (int i = 0; i < GRID_ROWS; i++) {
+            // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
+            _gridArray[i] = [NSMutableArray array];
+            x = 0;
+            
+            for (int j = 0; j < GRID_COLUMNS; j++) {
+                
+                
+                
+                
+                
+                numAlive ++;
+            }
+        }
 }
 
 @end
