@@ -165,16 +165,17 @@ static const int GRID_COLUMNS = 10;
     for (int row = 0; row < GRID_ROWS; row++) {
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
            
-            NSLog(@"row/col (%i, %i)  is alive %hhd", row,col, creature.isAlive);
-            NSLog(@"_creature.livingNeighbors %i ", creature.livingNeighbors );
+            NSLog(@"row/col (%i, %i)  is alive %hhd and neighbors %i", row,col, creature.isAlive, creature.livingNeighbors);
+            //NSLog(@"_creature.livingNeighbors %i ", creature.livingNeighbors );
            
-            if (creature.livingNeighbors == 0) {
+            if (creature.livingNeighbors == 3) {
                 creature.isAlive = true; numAlive ++;
                 NSLog(@"  is alive %hhd", creature.isAlive);
     
             } else {
                if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                    creature.isAlive = false;
+                   NSLog(@"  is dead %hhd", creature.isAlive);
                     }
                     }
             }
