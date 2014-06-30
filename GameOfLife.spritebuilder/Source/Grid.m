@@ -168,7 +168,7 @@ static const int GRID_COLUMNS = 10;
             NSLog(@"row/col (%i, %i)  is alive %hhd", row,col, _creature.isAlive);
             NSLog(@"_creature.livingNeighbors %i ", _creature.livingNeighbors );
            
-            if (_creature.livingNeighbors == 3) {
+            if (_creature.livingNeighbors == 0) {
                 _creature.isAlive = true; numAlive ++;
             } else {
                //if (_creature.livingNeighbors <= 1 || _creature.livingNeighbors >= 4) {
