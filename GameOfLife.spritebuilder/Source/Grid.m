@@ -129,9 +129,9 @@ static const int GRID_COLUMNS = 10;
                 isIndexValid = [self isIndexValidForX:x andY:y];
                 // skip over all the cells that are off screen and the cell that contains the creature we are curently updating
                 if (!((x == i ) && (y == j )) && isIndexValid ) {
-                    Creature *neighbour = _gridArray[x][y];
+                    Creature *neighbor = _gridArray[x][y];
                     if (neighbor.isAlive) {
-                        currentCreatur.livingNeighbors +=1;
+                        currentCreature.livingNeighbors +=1;
                     }
                 }
             }
@@ -139,17 +139,18 @@ static const int GRID_COLUMNS = 10;
     }
         
 }
+}
 
-
-- (BOOL)isIndexValidForX:(int)x andY:(int)y
-{
+- (BOOL)isIndexValidForX:(int)x andY:(int)y {
     BOOL isIndexValid = YES;
-    if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS)
-    {
+    if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS) {
         isIndexValid = NO;
     }
     return isIndexValid;
-}_(void)UpdateCreatures {
+}
+
+    
+    -(void)UpdateCreatures {
     
 }
 
