@@ -15,7 +15,8 @@
 
 //These are methods 
 -(void) evolveStep;
--(void) countNeighbours;
+-(void) countNeighbors;
+
 -(void) updateCreatures;
 
 
