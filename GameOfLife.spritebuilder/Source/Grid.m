@@ -151,7 +151,7 @@ static const int GRID_COLUMNS = 10;
 }
 
     
-    -(void)UpdateCreatures {
+-(void)UpdateCreatures {
         
         int numAlive = 0; //set count of population to zero
         //float x = 0;
@@ -171,8 +171,8 @@ static const int GRID_COLUMNS = 10;
                 numAlive ++;
                 //NSLog(@" row  %i column  %i ", i,j);
             }
-        }
-        //_totalAlive = numAlive;
-
+    
+        _totalAlive = numAlive;
+}
 
 @end
