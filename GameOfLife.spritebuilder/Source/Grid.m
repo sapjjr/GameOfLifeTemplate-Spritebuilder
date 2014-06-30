@@ -60,12 +60,10 @@ static const int GRID_COLUMNS = 10;
             //creature.isAlive = YES;
             
             x+=_cellWidth;
-            NSLog(@" row  %i column  %i ", i,j);
+            //NSLog(@" row  %i column  %i ", i,j);
         }
-        
         y += _cellHeight;
-        
-        NSLog(@" row  %i  -------" , i);
+        //NSLog(@" row  %i  -------" , i);
     }
 }
 
@@ -165,11 +163,14 @@ static const int GRID_COLUMNS = 10;
             
             for (int j = 0; j < GRID_COLUMNS; j++) {
                 
-                
+                if (currentCreatures.livingNeighbors == 3) {
+                    currentCreatures.isAlive = 0;
+                }
                 
                 
                 
                 numAlive ++;
+                NSLog(@" row  %i column  %i ", i,j);
             }
         }
 }
