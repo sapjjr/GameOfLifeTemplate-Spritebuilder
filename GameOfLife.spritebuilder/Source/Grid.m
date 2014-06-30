@@ -169,7 +169,7 @@ static const int GRID_COLUMNS = 10;
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
             Creature *currentCreature1 = _gridArray[row][col];
             NSLog(@"row %i and Column %i", row,col);
-            NSLog(@"currentCreature %i", currentCreature1.isAlive);
+            NSLog(@"currentCreature %i", self currentCreature1.isAlive);
 //            if((currentCreature.countNeighbors <=1  || (currentCreature.countNeighbors >= 4) ) {
   //              currentCreature.countNeighbors.isAlive = false;
             //}
