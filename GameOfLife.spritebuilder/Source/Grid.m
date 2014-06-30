@@ -165,7 +165,7 @@ static const int GRID_COLUMNS = 10;
     for (int row = 0; row < GRID_ROWS; row++) {
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
            
-            NSLog(@"row/col (%i, %i)  is alive %hhdd", row,col,_creature.isAlive);
+            NSLog(@"row/col (%i, %i)  is alive %hhd", row,col,_creature.isAlive);
             //Creature *creature = _gridArray[row][col];
             NSLog(@"_creature.livingNeighbors %ld", (long)_creature.livingNeighbors);
             
