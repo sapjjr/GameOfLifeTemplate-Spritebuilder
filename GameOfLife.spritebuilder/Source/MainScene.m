@@ -40,6 +40,7 @@
 
 -(void)pause {
     [self unschedule:@selector(step)];
+    NSLog(@"stopped here----------------------");
 }
 
 
