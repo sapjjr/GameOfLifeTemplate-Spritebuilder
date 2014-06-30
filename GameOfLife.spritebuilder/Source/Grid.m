@@ -170,6 +170,8 @@ static const int GRID_COLUMNS = 10;
            
             if (_creature.livingNeighbors == 0) {
                 _creature.isAlive = true; numAlive ++;
+                NSLog(@"  is alive %hhd", _creature.isAlive);
+    
             } else {
                //if (_creature.livingNeighbors <= 1 || _creature.livingNeighbors >= 4) {
                    _creature.isAlive = false;
