@@ -12,6 +12,7 @@
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
+int itStep = 0;
 
 @implementation Grid {
     NSMutableArray *_gridArray;
@@ -160,9 +161,12 @@ static const int GRID_COLUMNS = 10;
     }
 -(void)updateCreatures {
     
+    ;
     int numAlive = 0; //set count of population to zero
     
     for (int row = 0; row < GRID_ROWS; row++) {
+        itStep ++;
+        NSLog(@"------------------------------------- Step %i ", itStep);
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
             Creature *creature = _gridArray[row][col];
 
