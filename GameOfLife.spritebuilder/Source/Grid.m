@@ -13,6 +13,8 @@
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 int itStep = 0;
+int numAlive = 0;//set count of population to zero
+
 
 @implementation Grid {
     NSMutableArray *_gridArray;
@@ -176,7 +178,7 @@ int itStep = 0;
     
             } else {
                if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
-                   creature.isAlive = false; //numAlive = numAlive - 1 ;
+                   creature.isAlive = false; numAlive = numAlive - 1 ;
                 NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
                    //NSLog(@"number alive %i", numAlive);
                     }
