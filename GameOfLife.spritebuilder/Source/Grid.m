@@ -161,12 +161,12 @@ int itStep = 0;
     }
 -(void)updateCreatures {
     
-    ;
+    itStep ++;
+    NSLog(@"------------------------------------- Step %i ", itStep);
     int numAlive = 0; //set count of population to zero
     
     for (int row = 0; row < GRID_ROWS; row++) {
-        itStep ++;
-        NSLog(@"------------------------------------- Step %i ", itStep);
+       
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
             Creature *creature = _gridArray[row][col];
 
