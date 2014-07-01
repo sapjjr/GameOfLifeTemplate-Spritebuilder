@@ -181,9 +181,11 @@ int itStep = 0;
                    //NSLog(@"number alive %i", numAlive);
                     }
             
-              // else {
-               // numAlive ++; // so that if = 2 then still counts as alive
-            //}
+               else if
+               (creature.isAlive == true)
+               {
+                numAlive ++; // so that if = 2 then still counts as alive
+            }
         }
 
 NSLog(@"Row %i number alive %i------------", row,numAlive);
