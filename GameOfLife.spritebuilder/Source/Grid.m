@@ -13,7 +13,6 @@
 static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 int itStep = 0;
-int numAlive = 0;//set count of population to zero
 
 
 @implementation Grid {
@@ -162,11 +161,9 @@ int numAlive = 0;//set count of population to zero
         return isIndexValid;
     }
 -(void)updateCreatures {
-    
+    int numAlive = 0;//set count of population to zero
     itStep ++;
     NSLog(@"------------------------------------- Step %i ", itStep);
-    //int numAlive = 0; //set count of population to zero
-    
     for (int row = 0; row < GRID_ROWS; row++) {
        
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
@@ -176,13 +173,15 @@ int numAlive = 0;//set count of population to zero
                 creature.isAlive = true; numAlive ++;
                 NSLog(@"row/col (%i, %i) neighbors %i and is --Alive---- %hhd", row,col, creature.livingNeighbors, creature.isAlive);
     
-            } else {
+            } else if {
                if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                    creature.isAlive = false; //numAlive = numAlive - 1 ;
                 NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
                    //NSLog(@"number alive %i", numAlive);
                     }
                     }
+            else
+                numAlive ++; // so that if = 2 then still counts as alive
             }
 
 
