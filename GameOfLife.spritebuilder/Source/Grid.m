@@ -173,17 +173,17 @@ int itStep = 0;
                 creature.isAlive = true; numAlive ++;
                 NSLog(@"row/col (%i, %i) neighbors %i and is --Alive---- %hhd", row,col, creature.livingNeighbors, creature.isAlive);
     
-            } else if {
-               if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
+            } else if
+                (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
                    creature.isAlive = false; //numAlive = numAlive - 1 ;
                 NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
                    //NSLog(@"number alive %i", numAlive);
                     }
-                    }
-            else
+            
+               else {
                 numAlive ++; // so that if = 2 then still counts as alive
             }
-
+        }
 
 NSLog(@"Row %i number alive %i------------", row,numAlive);
 }
