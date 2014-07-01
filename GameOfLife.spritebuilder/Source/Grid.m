@@ -165,7 +165,7 @@ int numAlive = 0;//set count of population to zero
     
     itStep ++;
     NSLog(@"------------------------------------- Step %i ", itStep);
-    int numAlive = 0; //set count of population to zero
+    //int numAlive = 0; //set count of population to zero
     
     for (int row = 0; row < GRID_ROWS; row++) {
        
@@ -178,7 +178,7 @@ int numAlive = 0;//set count of population to zero
     
             } else {
                if (creature.livingNeighbors <= 1 || creature.livingNeighbors >= 4) {
-                   creature.isAlive = false; numAlive = numAlive - 1 ;
+                   creature.isAlive = false; //numAlive = numAlive - 1 ;
                 NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
                    //NSLog(@"number alive %i", numAlive);
                     }
