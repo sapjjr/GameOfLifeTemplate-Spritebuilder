@@ -1,10 +1,8 @@
 //
 //  Grid.m
 //  GameOfLife
-//
 //  Created by andrew on 26/06/2014.
 //  Copyright (c) 2014 Apportable. All rights reserved.
-//
 
 #import "Grid.h"
 #import "Creature.h"
@@ -14,14 +12,11 @@ static const int GRID_ROWS = 8;
 static const int GRID_COLUMNS = 10;
 int itStep = 0;
 
-
 @implementation Grid {
     NSMutableArray *_gridArray;
     float _cellWidth;
     float _cellHeight;
-
 }
-
 - (void)onEnter
 {
     [super onEnter];
@@ -29,13 +24,11 @@ int itStep = 0;
     // accept touches on the grid
     self.userInteractionEnabled = YES;
 }
-
 - (void)setupGrid
 {
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
-    
     float x = 0;
     float y = 0;
     
@@ -56,7 +49,7 @@ int itStep = 0;
             
             // this is shorthand to access an array inside an array
             _gridArray[i][j] = creature;
-            
+
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
             //creature.isAlive = YES;
             
@@ -67,21 +60,16 @@ int itStep = 0;
         //NSLog(@" row  %i  -------" , i);
     }
 }
-
-
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self ];
     
-    
     //get the Creature at that location
     Creature *creature = [self creatureForTouchPosition:touchLocation];
-    
     
     //Invert its state - kill it if its alive, bring it to life if it's dead.
     creature.isAlive = !creature.isAlive;
 }
-
 -(Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
     // get the row and the column that was touched, return the Creature inside the corresponding cell
     //int row = 0;
@@ -89,11 +77,8 @@ int itStep = 0;
     
     int row = touchPosition.y / _cellHeight;
     int column = touchPosition.x / _cellWidth;
-
     return _gridArray[row][column];
-    
 }
-
 -(void)evolveStep {
     //update each Creatures neighbour count
     [self countNeighbors];
@@ -101,12 +86,9 @@ int itStep = 0;
     //update each Creatures State
     [self updateCreatures];
     
-    
     //update the generation so the label's text will display the correct generation
     _generation++;
-    
 }
-
 -(void)countNeighbors {
 // iterate through the rows
 // note that NSArray has a method 'count' that will return the number of elements in the array
@@ -136,7 +118,6 @@ int itStep = 0;
                 // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
                 if (!((x == i) && (y == j)) && isIndexValid)
                 {
-                    
                     Creature *neighbor = _gridArray[x][y];
                     if (neighbor.isAlive)
                     {
@@ -148,8 +129,6 @@ int itStep = 0;
     }
 }
 }
-
-
 -(BOOL)isIndexValidForX:(int)x
                    andY:(int)y
     {
@@ -169,31 +148,24 @@ int itStep = 0;
         for (int col = 0; col < GRID_COLUMNS; col++ ) {
             Creature *creature = _gridArray[row][col];
            
-            if (creature.livingNeighbors == 3) {
-                creature.isAlive = true; numAlive ++;
-                NSLog(@"row/col (%i, %i) neighbors %i and is --Alive---- %hhd", row,col, creature.livingNeighbors, creature.isAlive);
-    
+            if      (creature.livingNeighbors == 3) {
+                    creature.isAlive = true; numAlive ++;
+                    //NSLog(@"row/col (%i, %i) neighbors %i and is --Alive---- %hhd", row,col, creature.livingNeighbors, creature.isAlive);
             } else if
-            
-                (creature.livingNeighbors <= 1 | creature.livingNeighbors >= 4) {
+                    (creature.livingNeighbors <= 1 | creature.livingNeighbors >= 4) {
                    creature.isAlive = false; //numAlive = numAlive - 1 ;
-                NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
+                    //NSLog(@"row/col (%i, %i) neighbors %i and is DEAD %hhd", row,col,  creature.livingNeighbors, creature.isAlive);
                    //NSLog(@"number alive %i", numAlive);
                     }
-            
                else if
-               (creature.isAlive == true)
+                   (creature.isAlive == true)
                {
-                numAlive ++; // so that if = 2 then still counts as alive
+                   numAlive ++; // so that if = 2 then still counts as alive if alive!
             }
         }
-
-NSLog(@"Row %i number alive %i------------", row,numAlive);
+//NSLog(@"Row %i number alive %i------------", row,numAlive);
 }
 _totalAlive = numAlive;
-NSLog(@"----------Final number alive %i------------", _totalAlive);
+//NSLog(@"----------Final number alive %i------------", _totalAlive);
 }
-
-
-
 @end
